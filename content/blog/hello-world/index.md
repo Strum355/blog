@@ -1,22 +1,43 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: BlogPost<HelloWorld>
+date: "2020-05-31T18:29:00.000Z"
+description: "Welp here we go...!"
 ---
 
-This is my first post on my new fake blog! How exciting!
+Hello and welcome to my blog that I never thought I'd actually start!
 
-I'm sure I'll write a lot more interesting things in the future.
+With a bit of downtime after college concluded and in between the job hunting, I finally
+decided to checkout Netlify with a blog of course!
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+Hopefully I'll end up putting some interesting (or not) posts up here over time : )
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+Be sure to check back often!
 
-![Chinese Salty Egg](./salty_egg.jpg)
+---
+
+To finish off this intro, a condensed example of one of my favourite snippets of code I've written:
+
+```go
+import (
+    "context"
+    lxd "github.com/lxc/lxd/client"
+)
+
+// OperationTimeout returns a context exceeded error and cancels the on-going
+// operation in the background if the deadline from the context is exceeded.
+func OperationTimeout(ctx context.Context, op lxd.Operation) error {
+    opChannel := make(chan error)
+    go func() {
+        opChannel <- op.Wait()
+        close(opChannel)
+    }()
+
+    select {
+    case err := <-opChannel:
+        return err
+    case <-ctx.Done():
+        go op.Cancel()
+        return ctx.Err()
+    }
+}
+```

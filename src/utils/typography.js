@@ -6,11 +6,22 @@ Wordpress2016.overrideThemeStyles = () => {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    "*": {
+        fontFamily: "'Source Code Pro', serif !important",
+    },
+    "h1 > *, h1": {
+        fontFamily: "Inconsolata, serif !important",
+    },
+    "code *": {
+        fontFamily: "Inconsolata, serif !important",
+    }
   }
 }
 
 delete Wordpress2016.googleFonts
 
+
+console.log(Wordpress2016)
 const typography = new Typography(Wordpress2016)
 
 // Hot reload typography in development.

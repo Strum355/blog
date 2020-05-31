@@ -1,17 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `impl NoahsBlog<T>`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`
+      name: `Noah Santschi-Cooney`,
+      summary: `. Observability, Distributed Systems, Containers, Programming Languages, DevOps and Developer Tooling.`
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://blog.noahsc.xyz/`,
     social: {
-      twitter: `kylemathews`
+      twitter: `strum355`,
+      github: `Strum355`,
+      linkedin: `strum355`
     }
   },
   plugins: [
+      
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,6 +52,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -66,7 +70,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`
+        icon: `content/assets/programming_icon.png`
       }
     },
     `gatsby-plugin-react-helmet`,
