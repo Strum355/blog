@@ -28,6 +28,8 @@ const Bio = () => {
           }
           social {
             twitter
+            github
+            linkedin
           }
         }
       }
@@ -35,6 +37,7 @@ const Bio = () => {
   `)
 
   const { author, social } = data.site.siteMetadata
+  console.log(social)
   return (
     <div
       style={{
@@ -58,10 +61,10 @@ const Bio = () => {
       <p>
         Written by <strong>{author.name}</strong>. {author.summary}
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>, {` `}
-        <a href={`https://github.com/${social.github}`}>Github</a>, {` `}
-        <a href={`https://linkedin.com/in/${social.linkedin}`}>LinkedIn</a>, {` `}
-        <a href={`https://noahsc.xyz/NoahSC_Resume.pdf`}>Resume</a>.
+        <a href={`https://twitter.com/${social.twitter}`} target='_blank'>Twitter</a>, {` `}
+        <a href={`https://github.com/${social.github}`} target='_blank'>GitHub</a>, {` `}
+        <a href={`https://linkedin.com/in/${social.linkedin}`} target='_blank'>LinkedIn</a>, {` `}
+        <a href={`https://noahsc.xyz/NoahSC_Resume.pdf`} target='_blank'>Resume</a>.
       </p>
     </div>
   )
