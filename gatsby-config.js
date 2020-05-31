@@ -5,7 +5,7 @@ module.exports = {
       name: `Noah Santschi-Cooney`,
       summary: `. Observability, Distributed Systems, Containers, Programming Languages, DevOps and Developer Tooling.`
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A blog of all sorts by Noah.`,
     siteUrl: `https://blog.noahsc.xyz/`,
     social: {
       twitter: `strum355`,
