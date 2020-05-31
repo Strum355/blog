@@ -3,7 +3,7 @@ module.exports = {
     title: `impl NoahsBlog<T>`,
     author: {
       name: `Noah Santschi-Cooney`,
-      summary: `. Observability, Distributed Systems, Containers, Programming Languages, DevOps and Developer Tooling.`
+      summary: `Observability, Distributed Systems, Containers, Programming Languages, DevOps and Developer Tooling.`
     },
     description: `A blog of all sorts by Noah.`,
     siteUrl: `https://blog.noahsc.xyz/`,
